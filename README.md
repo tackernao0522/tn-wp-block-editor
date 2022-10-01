@@ -101,3 +101,19 @@ add_action('enqueue_block_editor_assets', function () {
 + [開発ガイド](https://ja.wordpress.org/team/handbook/block-editor/how-to-guides/) <br>
 
 + [create-block パッケージのドキュメント](https://ja.wordpress.org/team/handbook/block-editor/reference-guides/packages/packages-create-block/) <br>
+
+## 80. カスタムブロックをビルドしてみよう
+
++ `$ cd app/public/wp-content/plugins/`を実行<br>
+
++ `$ npx @wordpress/create-block gutenpride(名前はなんでも良い)を実行<br>
+
++ `$ cd gutenpride/`を実行<br>
+
++ `$ npm install --save-dev postcss`を実行<br>
+
++ `$ npm run build`を実行<br>
+
++ wp管理画面 => `プラグイン` => `インストール済みプラグイン` => `Gutenpride` => `有効化`<br>
+
++ wp管理画面 => `投稿` => `新規追加` => `+` => `すべて表示` => `Gutenpride` で雛形ができる<br>
