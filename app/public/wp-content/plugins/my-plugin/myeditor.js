@@ -1,1 +1,4 @@
-alert('JavaScriptが読み込まれました')
+wp.blocks.registerBlockStyle('core/quote', {
+  name: 'blue',
+  label: 'ブルー'
+});
