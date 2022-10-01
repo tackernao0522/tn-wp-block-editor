@@ -311,3 +311,5 @@ export default function save({ attributes }) {
 + `Message` => `Hello`と入力してみる => `更新` => `投稿を表示` (Hello)とブラウザに表示されていればOK<br>
 
 + 編集もできるようになっている<br>
+
++ end<br>
