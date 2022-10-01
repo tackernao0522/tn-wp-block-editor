@@ -93,3 +93,11 @@ add_action('enqueue_block_editor_assets', function () {
 + `''`をクリックして => `ブルー`を選択<br>
 
 + 参考: [wp enqueue script](https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/wp_enqueue_script) <br>
+
+## 79. カスタムブロック制作の環境を作ろう
+
++ [ブロックエディターハンドブック](https://ja.wordpress.org/team/handbook/block-editor/) <br>
+
++ [開発ガイド](https://ja.wordpress.org/team/handbook/block-editor/how-to-guides/) <br>
+
++ [create-block パッケージのドキュメント](https://ja.wordpress.org/team/handbook/block-editor/reference-guides/packages/packages-create-block/) <br>
