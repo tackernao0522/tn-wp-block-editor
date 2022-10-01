@@ -50,3 +50,46 @@ alert('JavaScriptが読み込まれました')
 ```
 
 + wp管理画面 => `投稿` => `新規追加` => 作成したアラートが表示される<br>
+
+## 77. ブロックに独自のスタイルを追加しよう
+
++ wp管理画面 => `投稿` => `新規追加` => `+`アイコンをクリック => `すべて表示` => `引用` => `引用を追加` => `ここは引用です。`と入力 => `引用元を追加` => `ともすた`と入力 => `公開` => `公開` => `投稿を表示`<br>
+
++ 上記を編集　=> `引用投稿欄`をクリック => `B`をクリック => `更新` => `投稿を表示` => `太くなる`<br>
+
++ `app/public/wp-content/plugins/my-plugin/myeditor.js`を編集<br>
+
+```js:myeditor.js
+wp.blocks.registerBlockStyle('core/quote', {
+  name: 'blue',
+  label: 'ブルー'
+});
+```
+
++ `wp-content/plugins/my-plugin/my-plugin.php`を編集<br>
+
+```php:my-plugin.php
+<?php
+/*
+  plugin Name: マイプラグイン
+  Author: takabo
+*/
+
+add_action('enqueue_block_editor_assets', function () {
+  wp_enqueue_script(
+    'myeditor-script',
+    plugins_url('myeditor.js', __FILE__),
+    ['wp-blocks'] // 追加
+  );
+});
+```
+
++ wp管理画面 => 先ほどの投稿編集画面をリロードする<br>
+
++ キャッシュが残っている場合は、`Command + Shift + R`でリロードする<br>
+
++ 別の引用ブロックを作成する => `引用を追加` => `新しいスタイルです。` => `引用元を追加` => `ともすた`<br>
+
++ `''`をクリックして => `ブルー`を選択<br>
+
++ 参考: [wp enqueue script](https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/wp_enqueue_script) <br>
