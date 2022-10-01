@@ -1,2 +1,3 @@
 logs
 app/public/wp-content/plugins/gutenpride/node_modules/*
+app/public/wp-content/plugins/gutenpride/build/*
